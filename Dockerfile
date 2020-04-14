@@ -20,5 +20,5 @@ ADD . /bus-emulator/
 WORKDIR /bus-emulator/
 
 
-CMD  tar -xzvf buses.tar.gz && java -jar bus-emulator-1.0.jar
+CMD  7z x buses-tar/buses.7z.001 && java -jar bus-emulator-1.0.jar
 
