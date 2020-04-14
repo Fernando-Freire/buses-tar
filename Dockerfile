@@ -1,5 +1,7 @@
 FROM openjdk:14-jdk-alpine
 
+RUN apk add p7zip
+
 ENV RABBITMQ_HOST rabbitmq-cep-svc
 ENV RABBITMQ_PASSWORD g7wavG!WZ&5cYXu@yeR6nnho97A7Sd
 ENV RABBITMQ_USERNAME cep-handler
@@ -20,5 +22,5 @@ ADD . /bus-emulator/
 WORKDIR /bus-emulator/
 
 
-CMD  7z x buses-tar/buses.7z.001 && java -jar bus-emulator-1.0.jar
+CMD 7z x buses.7z && java -jar bus-emulator-1.0.jar
 
